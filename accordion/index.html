@@ -11,7 +11,21 @@
 </head>
 
 <body>
-
+    <div id="app">
+        <accordion>
+            <div slot="title">すき焼き</div>
+            <div class="content" slot="content">
+                すき焼き美味しいよね
+            </div>
+        </accordion>
+        <accordion>
+            <div slot="title" @click="print()">天ぷら</div>
+            <div class="content" slot="content">
+                天ぷら美味しいよね
+            </div>
+        </accordion>
+    </div>
+    <script src="script.js"></script>
 </body>
 
 </html>
