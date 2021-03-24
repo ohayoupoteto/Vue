@@ -16,17 +16,32 @@
 }
 
 .open-enter-active {
-    animation: open .5s;
+    animation: open .2s;
 }
 
 .open-leave-active {
-    animation: open .5s reverse;
+    animation: open .2s linear reverse;
 }
 
 .rotate-enter-active {
-    animation: rotate .5s;
+    animation: rotate .2s linear;
 }
 
 .rotate-leave-active {
-    animation: rotate .5s reverse;
+    animation: rotate .2s linear reverse;
+}
+
+.accordion {
+    margin: 10px auto;
+    padding: 10px;
+}
+
+.title {
+    margin-bottom: 10px;
+    background-color: #ddd;
+    padding: 15px;
+}
+
+.title>div {
+    display: inline-block;
 }
