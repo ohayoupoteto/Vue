@@ -1,14 +1,11 @@
-
 Vue.component("accordion", {
     template: `
-      <div class="accordion" @click="toggle()">
-        <div class="title">
+      <div class="accordion">
+        <div class="title"  @click="open()">
           <slot name="title"></slot>
-          <transition name="rotate">
-            <i class="fas fa-chevron-down"  v-if="!isOpen"></i>
-          </transition>
-          <transition name="rotate">
-            <i class="fas fa-chevron-up" v-if="isOpen"></i>
+          <transition name="rotate" mode="out-in">
+            <i class="fas fa-chevron-up" v-if="isOpen" key="rotate1"></i>
+            <i class="fas fa-chevron-down" v-else key="rotate2"></i>
           </transition>
         </div>
         <transition name="open" @before-enter="beforeEnter" @enter="enter" @before-leave="beforeLeave" @after-leave="afterLeave">
@@ -23,7 +20,7 @@ Vue.component("accordion", {
         }
     },
     methods: {
-        toggle: function () {
+        open: function () {
             this.isOpen = !this.isOpen;
         },
         beforeEnter: function (el) {
